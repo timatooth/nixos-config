@@ -36,9 +36,10 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     tmux wireshark nmap htop wireguard iotop ncdu tcpdump
-    firefox irssi vlc
+    firefox irssi vlc google-chrome
     binutils gcc gnumake openssl pkgconfig file
     cargo git go rustc vim
+    kubectl
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
