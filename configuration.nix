@@ -8,8 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./network-configuration.nix
     ];
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -36,11 +36,12 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     tmux wireshark nmap htop wireguard iotop ncdu tcpdump
-    firefox irssi vlc google-chrome
+    firefox irssi vlc google-chrome discord
     binutils gcc gnumake openssl pkgconfig file
     cargo git go rustc vim
-    kubectl
+    kubectl awscli jq whois ntfs3g
   ];
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
